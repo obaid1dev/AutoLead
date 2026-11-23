@@ -21,7 +21,8 @@ It uses two free, keyless services: Nominatim for geocoding and the Overpass API
 
 ## Demo
 
-Screenshot coming soon.
+<img width="1366" height="1092" alt="fullpage_snapshot_localhost_2026-11-23-12-45-23" src="https://github.com/user-attachments/assets/c4186827-826a-4e14-b837-877023068620" />
+
 
 ## Quick start
 
