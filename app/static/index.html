@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoLead — Find local businesses without a website</title>
+  <meta name="description" content="Find local businesses without a website, with the phone numbers, emails, and addresses already listed in OpenStreetMap.">
+  <meta name="theme-color" content="#edf0ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1315" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2318211c'/%3E%3Ccircle cx='12' cy='12' r='5' fill='none' stroke='%23f0f1ea' stroke-width='1.5'/%3E%3Cpath d='M12 4v3M12 17v3M4 12h3M17 12h3' stroke='%23f0f1ea' stroke-width='1.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+
+  <div class="page">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="AutoLead home">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">AutoLead</span>
+      </a>
+      <div class="masthead-side">
+        <span class="masthead-note">Open map data, no account needed</span>
+        <a class="masthead-link" href="https://github.com/obaid1dev/AutoLead" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">Find local businesses without a website, with their contact details.</h1>
+        <p class="intro-copy">Search a city, town, or neighborhood. AutoLead reads public OpenStreetMap records and returns the phone numbers, emails, and addresses that are already listed.</p>
+      </section>
+
+      <form id="search-form" class="search-sheet">
+        <div class="field field-location">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="Try: Lahore, Shoreditch London, or Paris" autocomplete="off" minlength="2" maxlength="120" required>
+        </div>
+        <div class="field field-category">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="all">All businesses</option>
+          </select>
+        </div>
+        <button id="search-button" class="button button-primary" type="submit">Search</button>
+        <div class="search-foot">
+          <label class="switch" for="only-without-website">
+            <input id="only-without-website" type="checkbox" checked>
+            <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+            <span>Only businesses without a website</span>
+          </label>
+          <p class="search-hint">Free and keyless. Powered by OpenStreetMap.</p>
+        </div>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="results" class="results" aria-labelledby="results-heading">
+        <div class="results-head">
+          <div class="results-title">
+            <h2 id="results-heading">Results</h2>
+            <p class="results-note">Every name links back to its OpenStreetMap record.</p>
+          </div>
+          <button id="download" class="button button-quiet" type="button" disabled>Download CSV</button>
+        </div>
+
+        <div id="empty-state" class="empty">
+          <svg class="empty-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4.75" y="4.75" width="38.5" height="38.5" rx="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M24 10v7M24 31v7M10 24h7M31 24h7" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="2" fill="currentColor"/>
+          </svg>
+          <div class="empty-copy">
+            <h3 id="empty-title">Start with a place</h3>
+            <p id="empty-text">Search any city, town, or neighborhood. If the list feels thin, try a broader category or a nearby larger town.</p>
+            <div id="examples" class="examples">
+              <span class="examples-label">Try</span>
+              <button class="example" type="button" data-example="Lahore">Lahore</button>
+              <button class="example" type="button" data-example="Shoreditch, London">Shoreditch, London</button>
+              <button class="example" type="button" data-example="Nicosia">Nicosia</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="table-wrap" class="table-wrap" hidden>
+          <table>
+            <caption class="visually-hidden">Local businesses matching your search</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Website status</th>
+                <th scope="col">Socials</th>
+                <th scope="col">Source</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-byline">Made by <a href="https://heyobaid.xyz" target="_blank" rel="noopener">Obaid</a> · Email: <a href="mailto:obaidd.dev@gmail.com">obaidd.dev@gmail.com</a> · Portfolio: <a href="https://heyobaid.xyz" target="_blank" rel="noopener">heyobaid.xyz</a></p>
+      <p class="footer-next">Next up: Daelia, coming soon.</p>
+      <p class="footer-fine">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, available under the ODbL.</p>
+    </footer>
+  </div>
+</body>
+</html>
