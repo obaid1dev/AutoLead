@@ -23,7 +23,7 @@ It uses two free, keyless services: Nominatim for geocoding and the Overpass API
 
 <img width="1366" height="1092" alt="fullpage_snapshot_localhost_2026-11-23-12-45-23" src="https://github.com/user-attachments/assets/c4186827-826a-4e14-b837-877023068620" />
 
-**AutoLead in action**
+## AutoLead In Action - Watch it extract all the bussineses in the matter of sceconds.
 
 <img width="1366" height="1355" alt="fullpage_snapshot_localhost_2026-11-23-12-46-44" src="https://github.com/user-attachments/assets/49228741-12bc-421f-8029-a2f8ab424f1f" />
 
