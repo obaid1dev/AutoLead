@@ -186,3 +186,8 @@ Obaid
 Email: [obaidd.dev@gmail.com](mailto:obaidd.dev@gmail.com)
 Portfolio: [https://heyobaid.xyz](https://heyobaid.xyz)
 GitHub: [https://github.com/obaid1dev](https://github.com/obaid1dev)
+
+
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/obaid1dev/autolead?utm_source=readme&utm_medium=badge)
+
+[![Architecture diagram of obaid1dev/autolead](https://gitdiagram.com/obaid1dev/autolead/diagram.png)](https://gitdiagram.com/obaid1dev/autolead?utm_source=readme&utm_medium=picture)
